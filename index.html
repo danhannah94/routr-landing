@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Routr — From Plan to Part, Faster</title>
-  <meta name="description" content="Routr turns your plans into CNC-ready cuts. Upload a PDF, lay out your boards, and generate toolpaths — all in one app. Coming soon.">
+  <meta name="description" content="Routr turns your plans into CNC-ready cuts. Design, generate toolpaths, simulate, and export G-code — all in one app.">
   <meta property="og:title" content="Routr — From Plan to Part, Faster">
-  <meta property="og:description" content="Upload a PDF. Lay out your boards. Generate toolpaths. All in one app.">
+  <meta property="og:description" content="Design. Generate toolpaths. Simulate. Export G-code. All in one app.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://routr.shop">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -148,75 +148,43 @@
       background: var(--accent-glow);
     }
 
-    /* EMAIL FORM */
+    /* CTA BUTTON */
     .signup {
       max-width: 460px;
       margin: 0 auto;
+      text-align: center;
     }
 
-    .signup p {
+    .signup .cta-sub {
       font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-top: 16px;
     }
 
-    .form-row {
-      display: flex;
-      gap: 10px;
-    }
-
-    .form-row input[type="email"] {
-      flex: 1;
-      padding: 14px 18px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: 1rem;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-row input[type="email"]::placeholder {
-      color: var(--text-muted);
-    }
-
-    .form-row input[type="email"]:focus {
-      border-color: var(--accent);
-    }
-
-    .form-row button {
-      padding: 14px 28px;
-      border-radius: 10px;
+    .cta-button {
+      display: inline-block;
+      width: 100%;
+      max-width: 460px;
+      padding: 18px 32px;
+      border-radius: 12px;
       border: none;
       background: var(--accent);
       color: #fff;
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 1.15rem;
+      font-weight: 700;
       font-family: inherit;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
-      white-space: nowrap;
+      text-decoration: none;
+      text-align: center;
     }
 
-    .form-row button:hover {
+    .cta-button:hover {
       background: var(--accent-hover);
     }
 
-    .form-row button:active {
+    .cta-button:active {
       transform: scale(0.97);
-    }
-
-    .success-msg {
-      display: none;
-      padding: 14px 18px;
-      border-radius: 10px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      color: #4ade80;
-      font-size: 0.95rem;
-      text-align: center;
     }
 
     /* FEATURES */
@@ -269,6 +237,142 @@
       line-height: 1.6;
     }
 
+    /* PRICING */
+    .pricing {
+      padding: 80px 0;
+    }
+
+    .pricing h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .pricing-subtitle {
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .pricing-card {
+      padding: 32px 28px;
+      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+    }
+
+    .pricing-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      padding: 4px 12px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .pricing-price-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 28px;
+      flex: 1;
+    }
+
+    .pricing-features li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .pricing-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s, border-color 0.2s;
+      text-decoration: none;
+      text-align: center;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+    }
+
+    .pricing-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .pricing-btn:active {
+      transform: scale(0.97);
+    }
+
+    .pricing-btn.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .pricing-btn.primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      color: #fff;
+    }
+
     /* WHO IT'S FOR */
     .audience {
       padding: 40px 0 80px;
@@ -314,9 +418,8 @@
     /* RESPONSIVE */
     @media (max-width: 600px) {
       .hero { padding: 60px 0 40px; }
-      .form-row { flex-direction: column; }
-      .form-row button { width: 100%; }
       .feature-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
       .pipeline { gap: 8px; }
       .pipeline-step { font-size: 0.75rem; padding: 6px 12px; }
     }
@@ -326,7 +429,7 @@
   <div class="container">
     <nav>
       <div class="logo">routr<span>.</span>shop</div>
-      <div class="nav-tag">coming soon</div>
+      <div class="nav-tag">patent pending</div>
     </nav>
 
     <section class="hero">
@@ -334,24 +437,18 @@
       <p>Upload a PDF plan. Lay out your boards. Generate CNC toolpaths. All in one app — no CAD degree required.</p>
 
       <div class="pipeline">
-        <span class="pipeline-step">PDF Upload</span>
+        <span class="pipeline-step">Design</span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Board Layout</span>
+        <span class="pipeline-step">Toolpaths</span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step">Assembly</span>
+        <span class="pipeline-step">Simulate</span>
         <span class="pipeline-arrow">→</span>
-        <span class="pipeline-step active">G-code ⚡</span>
+        <span class="pipeline-step active">Export G-code ⚡</span>
       </div>
 
       <div class="signup">
-        <p>Get notified when we launch — early access for the first 100 signups.</p>
-        <form id="signup-form" class="form-row">
-          <input type="email" id="email-input" placeholder="you@example.com" required>
-          <button type="submit">Notify Me</button>
-        </form>
-        <div class="success-msg" id="success-msg">
-          You're on the list! We'll reach out when it's time. 🎉
-        </div>
+        <a href="https://app.routr.shop" class="cta-button">Try Routr Free →</a>
+        <p class="cta-sub">No account needed to design. Sign up free to export G-code.</p>
       </div>
     </section>
 
@@ -381,6 +478,51 @@
       </div>
     </section>
 
+    <section class="pricing">
+      <h2>Simple pricing</h2>
+      <p class="pricing-subtitle">Design for free. Pay when you're ready to cut.</p>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Free</h3>
+          <div class="pricing-price">$0</div>
+          <div class="pricing-price-sub">forever</div>
+          <ul class="pricing-features">
+            <li>Full app access</li>
+            <li>All Workshop Mode tools</li>
+            <li>3 G-code exports</li>
+            <li>Community support</li>
+          </ul>
+          <a href="https://app.routr.shop" class="pricing-btn">Get started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Pro</h3>
+          <div class="pricing-price">$99<span style="font-size: 1rem; font-weight: 500; color: var(--text-muted)">/yr</span></div>
+          <div class="pricing-price-sub">or $12/mo · save 31% annually</div>
+          <ul class="pricing-features">
+            <li>Everything in Free</li>
+            <li>Unlimited G-code exports</li>
+            <li>Priority support</li>
+            <li>Early access to new features</li>
+          </ul>
+          <a href="https://app.routr.shop" class="pricing-btn primary">Start free trial</a>
+        </div>
+        <div class="pricing-card">
+          <div class="pricing-badge">Founding Member</div>
+          <h3>Lifetime</h3>
+          <div class="pricing-price">$299</div>
+          <div class="pricing-price-sub">one-time payment</div>
+          <ul class="pricing-features">
+            <li>Everything in Pro</li>
+            <li>Lifetime access — no recurring charges</li>
+            <li>Founding Member badge</li>
+            <li>Limited to first 100 members</li>
+          </ul>
+          <a href="https://app.routr.shop" class="pricing-btn">Claim your spot</a>
+        </div>
+      </div>
+    </section>
+
     <section class="audience">
       <h2>Built for makers</h2>
       <p>
@@ -391,33 +533,9 @@
     </section>
 
     <footer>
-      <p>© 2026 Routr · Built in Charlotte, NC · <a href="mailto:hello@routr.shop">hello@routr.shop</a></p>
+      <p>© 2026 Routr · Patent Pending · Built in Charlotte, NC</p>
+      <p style="margin-top: 8px;"><a href="/terms">Terms of Use</a> · <a href="/privacy">Privacy Policy</a> · <a href="mailto:hello@routr.shop">Contact</a></p>
     </footer>
   </div>
-
-  <script>
-    // Email signup — stores to localStorage for now
-    // TODO: Replace with real backend (Cloudflare Worker + KV, or Buttondown, or Mailchimp)
-    const form = document.getElementById('signup-form');
-    const emailInput = document.getElementById('email-input');
-    const successMsg = document.getElementById('success-msg');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-      if (!email) return;
-
-      // Store locally (replace with API call)
-      const signups = JSON.parse(localStorage.getItem('routr_signups') || '[]');
-      if (!signups.includes(email)) {
-        signups.push(email);
-        localStorage.setItem('routr_signups', JSON.stringify(signups));
-      }
-
-      // Show success
-      form.style.display = 'none';
-      successMsg.style.display = 'block';
-    });
-  </script>
 </body>
 </html>
